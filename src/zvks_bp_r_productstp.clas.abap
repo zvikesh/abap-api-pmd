@@ -1,0 +1,5 @@
+CLASS zvks_bp_r_productstp DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zvks_r_productstp.
+ENDCLASS.
+
+CLASS zvks_bp_r_productstp IMPLEMENTATION.
+ENDCLASS.

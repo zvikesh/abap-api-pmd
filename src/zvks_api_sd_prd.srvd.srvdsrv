@@ -1,0 +1,7 @@
+@EndUserText.label: 'Products API'
+define service ZVKS_API_SD_PRD {
+  expose ZVKS_A_Products          as Products;
+  expose ZVKS_I_CurrencyVH        as CurrencyVH;
+  expose ZVKS_I_UnitofMeasureVH   as UnitofMeasureVH;
+  expose ZVKS_I_BusinessPartnerVH as BusinessPartnerVH;
+}

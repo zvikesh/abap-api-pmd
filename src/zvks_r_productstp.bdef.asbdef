@@ -1,0 +1,57 @@
+managed implementation in class ZVKS_BP_R_ProductsTP unique;
+strict ( 2 );
+
+define behavior for ZVKS_R_ProductsTP alias Products
+persistent table zvks_ta_prod
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) ProductID;
+
+  field ( readonly )
+  BaseUoMName,
+  DimensionUoMName,
+  WeightUoMName,
+  ManufacturerFullName,
+  SupplierFullName;
+
+  field ( readonly )
+  CreatedAt,
+  CreatedBy,
+  LastChangedAt,
+  LocalLastChangedAt,
+  LocalLastChangedBy;
+
+  mapping for zvks_ta_prod
+    {
+      ProductID              = id;
+      ProductName            = name;
+      Category               = category;
+      SubCategory            = sub_category;
+      UnitPrice              = unit_price;
+      Currency               = currency;
+      Rating                 = rating;
+      MaximumQuantity        = qty_maximum;
+      MinimumQuantity        = qty_minimum;
+      ActualQuantity         = qty_actual;
+      BaseUnitOfMeasure      = base_uom;
+      Height                 = height;
+      Width                  = width;
+      Depth                  = depth;
+      DimensionUnitOfMeasure = dim_uom;
+      Weight                 = weight;
+      WeightUnitOfMeasure    = weight_uom;
+      ManufacturerID         = manufact_id;
+      SupplierId             = supplier_id;
+      CreatedBy              = created_by;
+      CreatedAt              = created_at;
+      LocalLastChangedBy     = local_last_changed_by;
+      LocalLastChangedAt     = local_last_changed_at; //Local ETag
+      LastChangedAt          = last_changed_at; //Total ETag
+    }
+
+}
